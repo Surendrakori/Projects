@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login 1 </title>
+    <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+    <img src="w3logo.jpg">
+    <center>
+    <div id="container">
+        <h2>SignUp</h2>
+        <h4>Please enter your details to Signup</h4>
+        <input type="text" id="t1" placeholder="UserName"><br><br>
+        <input type="password" id="p1" placeholder="password"><br><br>
+        <button onclick="signUp()" id="btn">Signup</button>
+    </div>
+    </center>
+    <script>
+        let name;
+        let pass;
+        let signUp = ()=>{
+            
+            name=t1.value;
+            pass=p1.value;
+            if(name==""||pass==""){
+                alert("Please provide proper details");
+            }
+            else{
+                alert("Successfully Signed Up")
+            container.innerHTML=`
+            <h2>LOGIN</h2>
+            <h4>Please enter your details to Login</h4>
+            <input type="text" id="t2" placeholder="Username"><br><br> 
+            <input type="password" id="p2" placeholder="password"><br><br>
+            <button onclick="check()" id="btn">Login</button>            
+            `
+        }}
+       
+        let check=()=>{
+            if(name==t2.value && pass==p2.value){
+                alert("Logged in");
+            }
+            else{
+                alert("Invalid credentials");
+            }
+        }
+    </script>
+</body>
+</html>
