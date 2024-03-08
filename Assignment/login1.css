@@ -1,15 +1,19 @@
 body{
-    background-color: rgb(62, 112, 62);
+    
+    background-image: url("insta.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px;
 }
 #container{
-    background-color: rgb(236, 234, 230);
+    background: transparent;
     height: 300px;
     width: 300px;
-    margin-top: 100px;
+    margin-top: 170px;
     border-radius: 7px;
+    color:rgb(138, 46, 61);
 }
 input{
-    border-radius: 5px;
+    border-radius: 180px;
     height:40px;
     width:250px;
 
@@ -18,10 +22,12 @@ input{
     width:250px;
     height:40px;
     border-radius: 7px;
-    background-color: rgb(62, 112, 62);
+    background-color: rgb(138, 46, 61);
+    border-radius: 180px;
 }
 img{
     vertical-align: top;
     height:80px;
-    width:80px;
+    width:120px;
+    border-radius: 180px;
 }
