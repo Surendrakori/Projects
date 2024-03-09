@@ -104,18 +104,20 @@ const getAlbums = async () =>{
     str+="</div>";
     return str;
 }
-const getPhotos = async (id) =>{
-    const url=`https://jsonplaceholder.typicode.com/photos/?albumId=${userId}`;
-    const json = await fetchData(url) 
-    let str="<div><h2> [My photos]<h2>";
-    json.map((value)=>{
-        str+=`
-        <a href="${value.url}"><img src="${value.thumbnailUrl}" onclick="getPhoto(${value.id})" width=250px height=250px></a>
-        `
-    })
-    str+="</div>";
-    return str;
-}
+const getPhotos = async (albumId) => {
+    const url = `https://jsonplaceholder.typicode.com/photos/?albumId=${albumId}`;
+    const json = await fetchData(url);
+    let str = `<div><h2>Photos of Album Id: ${albumId}</h2>`;
+    json.map((element) => {
+      str += `<div class='photos'><a href='${
+        element.url
+      }' target=_blank><img src='${element.thumbnailUrl}'></a>
+      <p>${element.title.slice(0, 20)}...</p></div>
+      `;
+    });
+    str += "</div";
+    divContent.innerHTML = str;
+  };
 
 const getProfile = async () =>{
     const url=`https://jsonplaceholder.typicode.com/users/${userId}`;
